@@ -2,7 +2,6 @@ import 'package:flutter/foundation.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import '../services/auth_service.dart';
 
-/// Provider for managing authentication state
 class AuthProvider with ChangeNotifier {
   final AuthService _authService = AuthService();
 
@@ -10,27 +9,21 @@ class AuthProvider with ChangeNotifier {
   bool _isLoading = false;
   String? _errorMessage;
 
-  /// Current user
   User? get user => _user;
 
-  /// Loading state
   bool get isLoading => _isLoading;
 
-  /// Error message
   String? get errorMessage => _errorMessage;
 
-  /// Is user authenticated
   bool get isAuthenticated => _user != null;
 
   AuthProvider() {
-    // Listen to auth state changes
     _authService.authStateChanges.listen((User? user) {
       _user = user;
       notifyListeners();
     });
   }
 
-  /// Sign in with Google
   Future<bool> signInWithGoogle() async {
     _isLoading = true;
     _errorMessage = null;
@@ -50,7 +43,6 @@ class AuthProvider with ChangeNotifier {
     }
   }
 
-  /// Sign out
   Future<void> signOut() async {
     _isLoading = true;
     _errorMessage = null;
@@ -68,13 +60,11 @@ class AuthProvider with ChangeNotifier {
     }
   }
 
-  /// Clear error message
   void clearError() {
     _errorMessage = null;
     notifyListeners();
   }
 
-  /// Delete account
   Future<bool> deleteAccount() async {
     _isLoading = true;
     _errorMessage = null;

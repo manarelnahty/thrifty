@@ -4,7 +4,6 @@ import '../theme/app_colors.dart';
 import '../utils/prefs_helper.dart';
 import 'login_screen.dart';
 
-/// Onboarding screen with beautiful UI and smooth transitions
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({super.key});
 
@@ -84,7 +83,6 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
         child: SafeArea(
           child: Column(
             children: [
-              // Skip button
               Align(
                 alignment: Alignment.topRight,
                 child: Padding(
@@ -101,7 +99,6 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 ),
               ),
 
-              // PageView
               Expanded(
                 child: PageView.builder(
                   controller: _pageController,
@@ -113,7 +110,6 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 ),
               ),
 
-              // Page indicator
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: 24.0),
                 child: SmoothPageIndicator(
@@ -130,7 +126,6 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 ),
               ),
 
-              // Next/Get Started button
               Padding(
                 padding: const EdgeInsets.fromLTRB(24, 0, 24, 32),
                 child: SizedBox(
@@ -164,7 +159,6 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   }
 }
 
-/// Onboarding page widget with icon, title, and description
 class _OnboardingPageWidget extends StatelessWidget {
   final OnboardingPage page;
 
@@ -177,7 +171,6 @@ class _OnboardingPageWidget extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          // Icon with gradient background
           Container(
             width: 160,
             height: 160,
@@ -197,7 +190,6 @@ class _OnboardingPageWidget extends StatelessWidget {
 
           const SizedBox(height: 64),
 
-          // Title
           Text(
             page.title,
             style: Theme.of(context).textTheme.headlineMedium?.copyWith(
@@ -209,7 +201,6 @@ class _OnboardingPageWidget extends StatelessWidget {
 
           const SizedBox(height: 24),
 
-          // Description
           Text(
             page.description,
             style: Theme.of(context).textTheme.bodyLarge?.copyWith(
@@ -224,7 +215,6 @@ class _OnboardingPageWidget extends StatelessWidget {
   }
 }
 
-/// Model for onboarding page data
 class OnboardingPage {
   final IconData icon;
   final String title;

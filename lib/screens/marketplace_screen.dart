@@ -5,7 +5,6 @@ import '../theme/app_colors.dart';
 import '../widgets/product_card.dart';
 import 'product_detail_screen.dart';
 
-/// Marketplace screen displaying all products
 class MarketplaceScreen extends StatefulWidget {
   const MarketplaceScreen({super.key});
 
@@ -87,13 +86,11 @@ class _MarketplaceScreenState extends State<MarketplaceScreen> {
       body: SafeArea(
         child: Column(
           children: [
-            // Header
             Padding(
               padding: const EdgeInsets.all(16.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  // Title
                   Text(
                     'السوق',
                     style: Theme.of(context).textTheme.headlineMedium?.copyWith(
@@ -110,7 +107,6 @@ class _MarketplaceScreenState extends State<MarketplaceScreen> {
                   ),
                   const SizedBox(height: 16),
 
-                  // Search bar
                   TextField(
                     controller: _searchController,
                     onChanged: _searchProducts,
@@ -134,7 +130,6 @@ class _MarketplaceScreenState extends State<MarketplaceScreen> {
               ),
             ),
 
-            // Category filters
             SizedBox(
               height: 50,
               child: ListView(
@@ -170,7 +165,6 @@ class _MarketplaceScreenState extends State<MarketplaceScreen> {
 
             const SizedBox(height: 8),
 
-            // Products grid
             Expanded(
               child: _isLoading
                   ? const Center(
@@ -234,7 +228,6 @@ class _MarketplaceScreenState extends State<MarketplaceScreen> {
   }
 }
 
-/// Category filter chip widget
 class _CategoryChip extends StatelessWidget {
   final String label;
   final bool isSelected;

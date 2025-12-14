@@ -4,8 +4,8 @@ import '../providers/auth_provider.dart';
 import '../theme/app_colors.dart';
 import 'marketplace_screen.dart';
 import 'profile_screen.dart';
+import 'add_product_screen.dart';
 
-/// Main home screen with bottom navigation
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
@@ -19,7 +19,7 @@ class _HomeScreenState extends State<HomeScreen> {
   final List<Widget> _screens = [
     const MarketplaceScreen(),
     const _FavoritesScreen(),
-    const _AddProductScreen(),
+    const AddProductScreen(),
     const _MessagesScreen(),
     const ProfileScreen(),
   ];
@@ -87,7 +87,6 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 }
 
-/// Placeholder favorites screen
 class _FavoritesScreen extends StatelessWidget {
   const _FavoritesScreen();
 
@@ -144,64 +143,6 @@ class _FavoritesScreen extends StatelessWidget {
   }
 }
 
-/// Placeholder add product screen
-class _AddProductScreen extends StatelessWidget {
-  const _AddProductScreen();
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: AppColors.background,
-      body: Container(
-        decoration: const BoxDecoration(gradient: AppColors.backgroundGradient),
-        child: Center(
-          child: Padding(
-            padding: const EdgeInsets.all(32.0),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Container(
-                  width: 120,
-                  height: 120,
-                  decoration: BoxDecoration(
-                    gradient: AppColors.accentGradient,
-                    shape: BoxShape.circle,
-                  ),
-                  child: const Icon(
-                    Icons.add_circle_rounded,
-                    size: 60,
-                    color: Colors.white,
-                  ),
-                ),
-                const SizedBox(height: 32),
-                Text(
-                  'إضافة منتج',
-                  style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                    fontWeight: FontWeight.w700,
-                    color: AppColors.textPrimary,
-                  ),
-                  textDirection: TextDirection.rtl,
-                ),
-                const SizedBox(height: 12),
-                Text(
-                  'قم ببيع منتجاتك المستعملة\nقريباً...',
-                  style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                    color: AppColors.textSecondary,
-                    height: 1.6,
-                  ),
-                  textAlign: TextAlign.center,
-                  textDirection: TextDirection.rtl,
-                ),
-              ],
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-/// Placeholder messages screen
 class _MessagesScreen extends StatelessWidget {
   const _MessagesScreen();
 

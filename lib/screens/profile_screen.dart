@@ -4,7 +4,6 @@ import '../providers/auth_provider.dart';
 import '../theme/app_colors.dart';
 import 'login_screen.dart';
 
-/// User profile screen
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
 
@@ -17,7 +16,6 @@ class ProfileScreen extends StatelessWidget {
       backgroundColor: AppColors.background,
       body: CustomScrollView(
         slivers: [
-          // App bar with gradient
           SliverAppBar(
             expandedHeight: 200,
             pinned: true,
@@ -32,7 +30,6 @@ class ProfileScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       const SizedBox(height: 40),
-                      // User avatar
                       if (user?.photoURL != null)
                         Container(
                           width: 90,
@@ -77,7 +74,6 @@ class ProfileScreen extends StatelessWidget {
                           ),
                         ),
                       const SizedBox(height: 12),
-                      // User name
                       if (user?.displayName != null)
                         Text(
                           user!.displayName!,
@@ -94,7 +90,6 @@ class ProfileScreen extends StatelessWidget {
             ),
           ),
 
-          // Profile content
           SliverToBoxAdapter(
             child: Padding(
               padding: const EdgeInsets.all(16.0),
@@ -103,7 +98,6 @@ class ProfileScreen extends StatelessWidget {
                 children: [
                   const SizedBox(height: 8),
 
-                  // User info card
                   _InfoCard(
                     title: 'معلومات الحساب',
                     children: [
@@ -131,7 +125,6 @@ class ProfileScreen extends StatelessWidget {
 
                   const SizedBox(height: 16),
 
-                  // Settings card
                   _InfoCard(
                     title: 'الإعدادات',
                     children: [
@@ -177,7 +170,6 @@ class ProfileScreen extends StatelessWidget {
 
                   const SizedBox(height: 16),
 
-                  // My listings card (placeholder)
                   _InfoCard(
                     title: 'منتجاتي',
                     children: [
@@ -211,7 +203,6 @@ class ProfileScreen extends StatelessWidget {
 
                   const SizedBox(height: 24),
 
-                  // Sign out button
                   SizedBox(
                     width: double.infinity,
                     child: ElevatedButton.icon(
@@ -246,7 +237,6 @@ class ProfileScreen extends StatelessWidget {
   }
 }
 
-/// Info card widget
 class _InfoCard extends StatelessWidget {
   final String title;
   final List<Widget> children;
@@ -288,7 +278,6 @@ class _InfoCard extends StatelessWidget {
   }
 }
 
-/// Info tile widget
 class _InfoTile extends StatelessWidget {
   final IconData icon;
   final String label;
@@ -343,7 +332,6 @@ class _InfoTile extends StatelessWidget {
   }
 }
 
-/// Action tile widget
 class _ActionTile extends StatelessWidget {
   final IconData icon;
   final String label;

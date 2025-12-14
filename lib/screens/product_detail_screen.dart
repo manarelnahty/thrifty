@@ -3,7 +3,6 @@ import 'package:url_launcher/url_launcher.dart';
 import '../models/product.dart';
 import '../theme/app_colors.dart';
 
-/// Product detail screen showing full product information
 class ProductDetailScreen extends StatefulWidget {
   final Product product;
 
@@ -53,7 +52,6 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
       backgroundColor: AppColors.background,
       body: CustomScrollView(
         slivers: [
-          // App bar with image
           SliverAppBar(
             expandedHeight: 350,
             pinned: true,
@@ -62,7 +60,6 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
               background: Stack(
                 fit: StackFit.expand,
                 children: [
-                  // Product image
                   PageView.builder(
                     itemCount: widget.product.images.length,
                     onPageChanged: (index) {
@@ -86,7 +83,6 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                     },
                   ),
 
-                  // Gradient overlay
                   Positioned(
                     bottom: 0,
                     left: 0,
@@ -106,7 +102,6 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                     ),
                   ),
 
-                  // Image indicators
                   if (widget.product.images.length > 1)
                     Positioned(
                       bottom: 16,
@@ -135,7 +130,6 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
             ),
           ),
 
-          // Product details
           SliverToBoxAdapter(
             child: Container(
               decoration: const BoxDecoration(
@@ -147,11 +141,9 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    // Price and condition
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        // Price
                         Container(
                           padding: const EdgeInsets.symmetric(
                             horizontal: 16,
@@ -179,7 +171,6 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                           ),
                         ),
 
-                        // Condition badge
                         Container(
                           padding: const EdgeInsets.symmetric(
                             horizontal: 16,
@@ -201,7 +192,6 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
 
                     const SizedBox(height: 24),
 
-                    // Title
                     Text(
                       widget.product.title,
                       style: Theme.of(context).textTheme.headlineSmall
@@ -211,7 +201,6 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
 
                     const SizedBox(height: 8),
 
-                    // Location and category
                     Row(
                       children: [
                         const Icon(
@@ -252,7 +241,6 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
 
                     const SizedBox(height: 24),
 
-                    // Description
                     Text(
                       'الوصف',
                       style: Theme.of(context).textTheme.titleMedium?.copyWith(
@@ -274,7 +262,6 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
 
                     const SizedBox(height: 32),
 
-                    // Seller information
                     Container(
                       padding: const EdgeInsets.all(16),
                       decoration: BoxDecoration(
@@ -348,7 +335,6 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
         ],
       ),
 
-      // Contact buttons
       bottomNavigationBar: Container(
         padding: const EdgeInsets.all(16),
         decoration: BoxDecoration(
@@ -364,7 +350,6 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
         child: SafeArea(
           child: Row(
             children: [
-              // Call button
               Expanded(
                 child: OutlinedButton.icon(
                   onPressed: _launchPhone,
@@ -378,7 +363,6 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
 
               const SizedBox(width: 12),
 
-              // WhatsApp button
               Expanded(
                 flex: 2,
                 child: ElevatedButton.icon(

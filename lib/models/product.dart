@@ -1,4 +1,3 @@
-/// Product model for thrifted items
 class Product {
   final String id;
   final String title;
@@ -26,7 +25,6 @@ class Product {
     this.isAvailable = true,
   });
 
-  /// Create Product from JSON
   factory Product.fromJson(Map<String, dynamic> json) {
     return Product(
       id: json['id'] as String? ?? '',
@@ -43,7 +41,6 @@ class Product {
     );
   }
 
-  /// Convert Product to JSON
   Map<String, dynamic> toJson() {
     return {
       'id': id,
@@ -60,7 +57,6 @@ class Product {
     };
   }
 
-  /// Copy with method for immutable updates
   Product copyWith({
     String? id,
     String? title,
@@ -90,7 +86,6 @@ class Product {
   }
 }
 
-/// Product categories
 enum ProductCategory {
   clothes('clothes', 'ملابس'),
   bags('bags', 'حقائب'),
@@ -110,7 +105,6 @@ enum ProductCategory {
   }
 }
 
-/// Product condition
 enum ProductCondition {
   used('used', 'مستعمل'),
   vintage('vintage', 'أنتيك'),

@@ -5,7 +5,6 @@ import '../providers/auth_provider.dart';
 import '../theme/app_colors.dart';
 import 'home_screen.dart';
 
-/// Login screen with Google Sign-In
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
 
@@ -91,7 +90,6 @@ class _LoginScreenState extends State<LoginScreen>
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      // App logo/icon
                       Container(
                         width: 120,
                         height: 120,
@@ -115,7 +113,6 @@ class _LoginScreenState extends State<LoginScreen>
 
                       const SizedBox(height: 48),
 
-                      // App name
                       Text(
                         'Thrifty',
                         style: Theme.of(context).textTheme.displaySmall
@@ -128,7 +125,6 @@ class _LoginScreenState extends State<LoginScreen>
 
                       const SizedBox(height: 12),
 
-                      // Tagline
                       Text(
                         'Your Sustainable Shopping Companion',
                         style: Theme.of(context).textTheme.bodyLarge?.copyWith(
@@ -139,7 +135,6 @@ class _LoginScreenState extends State<LoginScreen>
 
                       const SizedBox(height: 80),
 
-                      // Sign in with Google button
                       Consumer<AuthProvider>(
                         builder: (context, authProvider, _) {
                           if (authProvider.isLoading) {
@@ -212,7 +207,6 @@ class _LoginScreenState extends State<LoginScreen>
 
                       const SizedBox(height: 32),
 
-                      // Terms and privacy
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 16.0),
                         child: Text(

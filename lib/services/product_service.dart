@@ -1,14 +1,11 @@
 import 'dart:convert';
 import '../models/product.dart';
 
-/// Service for managing products
-/// Currently uses mock data, can be extended to use Firebase later
 class ProductService {
   static final ProductService _instance = ProductService._internal();
   factory ProductService() => _instance;
   ProductService._internal();
 
-  /// Mock product data in Arabic
   static const String _mockProductsJson = '''
   {
     "products": [
@@ -108,13 +105,11 @@ class ProductService {
 
   List<Product>? _cachedProducts;
 
-  /// Get all products
   Future<List<Product>> getAllProducts() async {
     if (_cachedProducts != null) {
       return _cachedProducts!;
     }
 
-    // Simulate network delay
     await Future.delayed(const Duration(milliseconds: 500));
 
     final jsonData = json.decode(_mockProductsJson);
@@ -127,7 +122,6 @@ class ProductService {
     return _cachedProducts!;
   }
 
-  /// Get products by category
   Future<List<Product>> getProductsByCategory(String category) async {
     final allProducts = await getAllProducts();
 
@@ -140,7 +134,6 @@ class ProductService {
         .toList();
   }
 
-  /// Search products by title or description
   Future<List<Product>> searchProducts(String query) async {
     final allProducts = await getAllProducts();
 
@@ -155,7 +148,6 @@ class ProductService {
     }).toList();
   }
 
-  /// Get product by ID
   Future<Product?> getProductById(String id) async {
     final allProducts = await getAllProducts();
     try {
@@ -165,7 +157,6 @@ class ProductService {
     }
   }
 
-  /// Clear cache (useful for refresh)
   void clearCache() {
     _cachedProducts = null;
   }

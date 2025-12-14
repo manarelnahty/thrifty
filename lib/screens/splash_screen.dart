@@ -7,7 +7,6 @@ import 'onboarding_screen.dart';
 import 'login_screen.dart';
 import 'home_screen.dart';
 
-/// Splash screen that determines initial navigation
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
 
@@ -43,7 +42,6 @@ class _SplashScreenState extends State<SplashScreen>
 
     _animationController.forward();
 
-    // Navigate after animation and auth check
     _navigateToNextScreen();
   }
 
@@ -54,7 +52,6 @@ class _SplashScreenState extends State<SplashScreen>
   }
 
   Future<void> _navigateToNextScreen() async {
-    // Wait for animation to complete
     await Future.delayed(const Duration(milliseconds: 2000));
 
     if (!mounted) return;
@@ -65,13 +62,10 @@ class _SplashScreenState extends State<SplashScreen>
     Widget nextScreen;
 
     if (authProvider.isAuthenticated) {
-      // User is already signed in, go to home
       nextScreen = const HomeScreen();
     } else if (!isOnboardingComplete) {
-      // First time user, show onboarding
       nextScreen = const OnboardingScreen();
     } else {
-      // Returning user, show login
       nextScreen = const LoginScreen();
     }
 
@@ -95,7 +89,6 @@ class _SplashScreenState extends State<SplashScreen>
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  // App icon
                   Container(
                     width: 140,
                     height: 140,
@@ -119,7 +112,6 @@ class _SplashScreenState extends State<SplashScreen>
 
                   const SizedBox(height: 32),
 
-                  // App name
                   Text(
                     'Thrifty',
                     style: Theme.of(context).textTheme.displayMedium?.copyWith(
@@ -131,7 +123,6 @@ class _SplashScreenState extends State<SplashScreen>
 
                   const SizedBox(height: 8),
 
-                  // Tagline
                   Text(
                     'Sustainable Shopping',
                     style: Theme.of(context).textTheme.titleMedium?.copyWith(

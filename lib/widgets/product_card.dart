@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import '../models/product.dart';
 import '../theme/app_colors.dart';
 
-/// Product card widget for displaying product information in grid
 class ProductCard extends StatelessWidget {
   final Product product;
   final VoidCallback onTap;
@@ -28,7 +27,6 @@ class ProductCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Product image
             Expanded(
               flex: 3,
               child: ClipRRect(
@@ -37,7 +35,6 @@ class ProductCard extends StatelessWidget {
                 ),
                 child: Stack(
                   children: [
-                    // Image
                     Image.network(
                       product.images.first,
                       width: double.infinity,
@@ -71,7 +68,6 @@ class ProductCard extends StatelessWidget {
                       },
                     ),
 
-                    // Condition badge
                     Positioned(
                       top: 8,
                       right: 8,
@@ -105,7 +101,6 @@ class ProductCard extends StatelessWidget {
               ),
             ),
 
-            // Product details
             Expanded(
               flex: 2,
               child: Padding(
@@ -113,7 +108,6 @@ class ProductCard extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    // Title
                     Text(
                       product.title,
                       style: Theme.of(context).textTheme.titleSmall?.copyWith(
@@ -126,11 +120,9 @@ class ProductCard extends StatelessWidget {
 
                     const Spacer(),
 
-                    // Location and price
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        // Location
                         Row(
                           children: [
                             const Icon(
@@ -148,7 +140,6 @@ class ProductCard extends StatelessWidget {
                           ],
                         ),
 
-                        // Price
                         Container(
                           padding: const EdgeInsets.symmetric(
                             horizontal: 8,

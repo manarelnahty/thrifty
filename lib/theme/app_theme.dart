@@ -2,15 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'app_colors.dart';
 
-/// Custom theme configuration for Thrifty app
-/// Implements Material 3 design with custom colors and Google Fonts
 class AppTheme {
   static ThemeData get lightTheme {
     return ThemeData(
       useMaterial3: true,
       brightness: Brightness.light,
 
-      // Color Scheme
       colorScheme: ColorScheme.light(
         primary: AppColors.primary,
         secondary: AppColors.secondary,
@@ -24,10 +21,8 @@ class AppTheme {
         surfaceContainerHighest: AppColors.surfaceVariant,
       ),
 
-      // Scaffold
       scaffoldBackgroundColor: AppColors.background,
 
-      // AppBar Theme
       appBarTheme: AppBarTheme(
         backgroundColor: Colors.transparent,
         elevation: 0,
@@ -40,9 +35,7 @@ class AppTheme {
         ),
       ),
 
-      // Text Theme
       textTheme: TextTheme(
-        // Display
         displayLarge: GoogleFonts.outfit(
           fontSize: 57,
           fontWeight: FontWeight.w700,
@@ -60,7 +53,6 @@ class AppTheme {
           color: AppColors.textPrimary,
         ),
 
-        // Headline
         headlineLarge: GoogleFonts.outfit(
           fontSize: 32,
           fontWeight: FontWeight.w600,
@@ -77,7 +69,6 @@ class AppTheme {
           color: AppColors.textPrimary,
         ),
 
-        // Title
         titleLarge: GoogleFonts.inter(
           fontSize: 22,
           fontWeight: FontWeight.w600,
@@ -96,7 +87,6 @@ class AppTheme {
           letterSpacing: 0.1,
         ),
 
-        // Body
         bodyLarge: GoogleFonts.inter(
           fontSize: 16,
           fontWeight: FontWeight.w400,
@@ -116,7 +106,6 @@ class AppTheme {
           letterSpacing: 0.4,
         ),
 
-        // Label
         labelLarge: GoogleFonts.inter(
           fontSize: 14,
           fontWeight: FontWeight.w600,
@@ -137,7 +126,6 @@ class AppTheme {
         ),
       ),
 
-      // Elevated Button Theme
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
           backgroundColor: AppColors.primary,
@@ -156,7 +144,6 @@ class AppTheme {
         ),
       ),
 
-      // Text Button Theme
       textButtonTheme: TextButtonThemeData(
         style: TextButton.styleFrom(
           foregroundColor: AppColors.primary,
@@ -169,7 +156,6 @@ class AppTheme {
         ),
       ),
 
-      // Outlined Button Theme
       outlinedButtonTheme: OutlinedButtonThemeData(
         style: OutlinedButton.styleFrom(
           foregroundColor: AppColors.primary,
@@ -186,7 +172,6 @@ class AppTheme {
         ),
       ),
 
-      // Input Decoration Theme
       inputDecorationTheme: InputDecorationTheme(
         filled: true,
         fillColor: AppColors.surfaceVariant,
@@ -213,15 +198,13 @@ class AppTheme {
         hintStyle: GoogleFonts.inter(fontSize: 14, color: AppColors.textHint),
       ),
 
-      // Card Theme
-      cardTheme: CardTheme(
+      cardTheme: CardThemeData(
         elevation: 2,
         shadowColor: AppColors.shadowLight,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
         color: AppColors.surface,
       ),
 
-      // Icon Theme
       iconTheme: const IconThemeData(color: AppColors.textPrimary, size: 24),
     );
   }

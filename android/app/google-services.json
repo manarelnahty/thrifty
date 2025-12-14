@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "963808247796",
+    "firebase_url": "https://thrifty-f1509-default-rtdb.firebaseio.com",
+    "project_id": "thrifty-f1509",
+    "storage_bucket": "thrifty-f1509.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:963808247796:android:5e632501b3c12dd8a5c3a1",
+        "android_client_info": {
+          "package_name": "com.thrifty.thrifty"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "963808247796-rqlmeh4bi1189f11jcdtmeuvojoe01u8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.thrifty.thrifty",
+            "certificate_hash": "d1e51f4efa9037000893c48f8ae2515c5954a01c"
+          }
+        },
+        {
+          "client_id": "963808247796-gbqv0qpn2vpsba0pff7fgmo38iq7p319.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAOg2tbvqNOR-QzPE-5zpld9-SyiXgfTNU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "963808247796-gbqv0qpn2vpsba0pff7fgmo38iq7p319.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
